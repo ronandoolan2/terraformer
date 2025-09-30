@@ -213,7 +213,7 @@ func (g *RDSGenerator) loadEventSubscription(svc *rds.Client) error {
 			return err
 		}
 		for _, eventSubscription := range page.EventSubscriptionsList {
-			resourceName := StringValue(eventSubscription.CustomerAwsId)
+			resourceName := StringValue(eventSubscription.CustSubscriptionId)
 			g.Resources = append(g.Resources, terraformutils.NewSimpleResource(
 				resourceName,
 				resourceName,
